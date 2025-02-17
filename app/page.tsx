@@ -16,7 +16,7 @@ export default function Home() {
         <header className="text-center mb-16">
           <p className="text-sm font-medium tracking-widest mb-4">WELCOME TO MY WORLD</p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display mb-6">
-            <span className="font-normal">I'm </span>
+            <span className="font-normal">I&apos;m </span>
             <span className="italic">EstePrime</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
