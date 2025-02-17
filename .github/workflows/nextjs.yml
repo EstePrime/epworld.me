@@ -60,6 +60,7 @@ jobs:
           # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
           #
           # You may remove this line if you want to manage the configuration yourself.
+          cache-dependency-path: "./package-lock.json"
           static_site_generator: next
       - name: Restore cache
         uses: actions/cache@v4
