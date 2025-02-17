@@ -5,6 +5,13 @@ import { LightningBackground } from "@/components/lightning-effect"
 import { formatDate } from "@/utils/dateFormatter"
 import { Badge } from "@/components/ui/badge"
 import { MDXRemote } from "next-mdx-remote/rsc"
+import { Metadata } from "next"
+
+interface BlogPostParams {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
 export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), "content/posts")
   const fileNames = fs.readdirSync(postsDirectory)
@@ -14,18 +21,18 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
-  const { slug } = params
-  const filePath = path.join(process.cwd(), "content/posts", `${slug}.mdx`)
-  const fileContents = fs.readFileSync(filePath, "utf8")
+export default async function BlogPost({ params }: BlogPostParams) {
+  const { slug } = await params;
+  const filePath = path.join(process.cwd(), "content/posts", `${slug}.mdx`);
+  const fileContents = fs.readFileSync(filePath, "utf8");
 
-  const { content, data } = matter(fileContents)
+  const { content, data } = matter(fileContents);
+  const components = {};
 
   return (
     <main className="min-h-screen relative overflow-hidden">
       <LightningBackground />
       <div className="container px-4 py-16 mx-auto">
-
         <header className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display mb-6">
             <span className="italic">{data.title}</span>
@@ -37,22 +44,21 @@ export default async function BlogPost({ params }: { params: { slug: string } })
             <Badge>{formatDate(data.date)}</Badge>
           </div>
         </header>
-        <MDXRemote source={content} />
-        </div>
+        <MDXRemote source={content} components={components} />
+      </div>
     </main>
-  )
+  );
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const { slug } = params
-  const filePath = path.join(process.cwd(), "content/posts", `${slug}.mdx`)
-  const fileContents = fs.readFileSync(filePath, "utf8")
+export async function generateMetadata({ params }: BlogPostParams): Promise<Metadata> {
+  const { slug } = await params;
+  const filePath = path.join(process.cwd(), "content/posts", `${slug}.mdx`);
+  const fileContents = fs.readFileSync(filePath, "utf8");
 
-  const { data } = matter(fileContents)
+  const { data } = matter(fileContents);
 
   return {
     title: data.title,
     description: data.description,
-  }
+  };
 }
-

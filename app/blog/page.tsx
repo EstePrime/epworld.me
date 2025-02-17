@@ -68,6 +68,7 @@ export default function BlogPage() {
                     </div>
                   </div>
                 </Card>
+                
               </Link>
 
             ))}
