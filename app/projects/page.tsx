@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Github, ExternalLink } from "lucide-react"
 import Link from "next/link"
+import { LightningBackground } from "@/components/lightning-effect"
 
 // Future projects, if you want to modify just uncomment the code/
 const projects = [
@@ -14,18 +15,13 @@ const projects = [
     github: "#",
     demo: "#",
     featured: true, // choose if the project is displayed on the "featured category".
-  } 
+  }
 ]
 
 export default function ProjectsPage() {
   return (
     <main className="min-h-screen relative overflow-hidden">
-      {/* Lightning effects */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 -left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-lightning" />
-        <div className="absolute bottom-1/3 right-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-lightning [animation-delay:2s]" />
-      </div>
-
+      <LightningBackground />
       <div className="container px-4 py-16 mx-auto">
         <header className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display mb-6">
