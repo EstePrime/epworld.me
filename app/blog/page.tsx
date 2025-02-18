@@ -5,7 +5,7 @@ import { LightningBackground } from "@/components/lightning-effect"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { formatDate } from "@/utils/dateFormatter"
-
+import escapeHtml from "escape-html"
 import matter from "gray-matter"
 function getBlogPosts() {
   const postsDirectory = path.join(process.cwd(), "content/posts")
@@ -19,7 +19,7 @@ function getBlogPosts() {
     const { data } = matter(fileContents)
 
     return {
-      slug,
+      slug: escapeHtml(slug),
       title: data.title,
       date: data.date,
       description: data.description,
