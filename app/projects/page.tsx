@@ -4,19 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Github, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import { LightningBackground } from "@/components/lightning-effect"
-
-// Future projects, if you want to modify just uncomment the code/
-const projects = [
-  {
-    title: "Future project...",
-    description: "Desc...",
-    image: "/",
-    tags: ["Next.js", "AI", "TypeScript"],
-    github: "#",
-    demo: "#",
-    featured: true, // choose if the project is displayed on the "featured category".
-  }
-]
+import { projects } from "@/components/projects"
 
 export default function ProjectsPage() {
   return (
@@ -43,13 +31,13 @@ export default function ProjectsPage() {
                   <div className="aspect-video relative overflow-hidden">
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 z-10">
                       <Button size="sm" variant="secondary" asChild>
-                        <Link href={project.github}>
+                        <Link href={project.github} target="_blank">
                           <Github className="mr-2 h-4 w-4" />
                           Code
                         </Link>
                       </Button>
                       <Button size="sm" variant="secondary" asChild>
-                        <Link href={project.demo}>
+                        <Link href={project.demo} target="_blank">
                           <ExternalLink className="mr-2 h-4 w-4" />
                           Demo
                         </Link>
