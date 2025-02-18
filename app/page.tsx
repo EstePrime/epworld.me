@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Github, Mail, Twitter } from "lucide-react"
 import Link from "next/link"
+import ProjectCards from "@/components/sections/projects"
+import { projects } from "@/components/projects"
 
 export default function Home() {
   return (
@@ -54,7 +56,23 @@ export default function Home() {
             <p className="text-muted-foreground">Leveraging AI technologies to accelerate development and deliver efficient solutions faster.</p>
           </Card>
         </div>
-
+        <div className="container mx-auto relative mt-16" >
+          <div className="w-full flex justify-center">
+            <div className="max-w-[1024px] w-full">
+              <div
+                className="font-display font-medium text-5xl"
+              >
+                From Idea
+                <br />
+                to <span className="italic">Execution</span>
+              </div>
+              <p className="mt-3">Bringing concepts to life through cutting-edge web development.</p>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <ProjectCards projects={projects} />
+          </div>
+        </div>
         <footer className="mt-20 text-center">
           <div className="flex justify-center gap-4">
             <Button variant="ghost" size="icon" asChild>
