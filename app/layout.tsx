@@ -2,6 +2,7 @@ import type React from "react"
 import { Inter, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils"
+import { Navbar } from "@/components/navbar"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <body className={cn("min-h-screen bg-cream font-sans antialiased", inter.variable, playfair.variable)}>
+        <Navbar />
         {children}
       </body>
     </html>

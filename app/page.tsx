@@ -2,18 +2,15 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Github, Mail, Twitter } from "lucide-react"
 import Link from "next/link"
+import { LightningBackground } from "@/components/lightning-effect"
 import ProjectCards from "@/components/sections/projects"
 import { projects } from "@/components/projects"
+
 
 export default function Home() {
   return (
     <main className="min-h-screen relative overflow-hidden">
-      {/* Lightning effects */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 -left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-lightning" />
-        <div className="absolute top-1/3 right-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-lightning [animation-delay:2s]" />
-      </div>
-
+      <LightningBackground />
       <div className="container px-4 py-16 mx-auto">
         <header className="text-center mb-16">
           <p className="text-sm font-medium tracking-widest mb-4">WELCOME TO MY WORLD</p>
