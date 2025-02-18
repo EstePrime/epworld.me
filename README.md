@@ -17,3 +17,18 @@ Clone the repository and install the dependencies:
 git clone https://github.com/EstePrime/epworld.me.git
 cd epworld.me
 npm install
+```
+## 🌐 Deployment
+This site is automatically deployed to GitHub Pages with every update to the `main` branch.
+
+## 🤝 Contributing
+Contributions are welcome! If you want to improve this project or add features, feel free to open a "Pull Request." Here's how to contribute:
+1. Fork this repository
+2. Create a branch for your feature (git checkout -b feature/my-feature)
+3. Commit your changes (git commit -am 'Add a new feature')
+4. Push your branch (git push origin feature/my-feature)
+5. Create a Pull Request
+
+## 💬 Contact
+You can reach me via [X](https://x.com/EstePrimeWorld) for any questions or suggestions.
+
