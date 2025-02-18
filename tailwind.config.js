@@ -60,7 +60,7 @@ module.exports = {
         },
       },
       animation: {
-        lightning: "lightning 5s ease-in-out infinite",
+        lightning: "lightning 8s ease-in-out infinite",
       },
       borderRadius: {
         lg: "var(--radius)",
