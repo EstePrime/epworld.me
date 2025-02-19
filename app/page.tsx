@@ -50,11 +50,11 @@ export default function Home() {
             <p className="text-muted-foreground">Leveraging AI technologies to accelerate development and deliver efficient solutions faster.</p>
           </Card>
         </div>
-        <div className="container mx-auto relative mt-16" >
+        <div className="relative mt-16 mx-auto md:container">
           <div className="w-full flex justify-center">
             <div className="max-w-[1024px] w-full flex items-center justify-between">
               <div>
-                <div className="font-display font-medium text-5xl">
+                <div className="font-display font-medium md:text-5xl text-4xl">
                   From Idea
                   <br />
                   to <span className="italic">Execution</span>
@@ -63,10 +63,15 @@ export default function Home() {
                   Bringing concepts to life through cutting-edge web development.
                 </p>
               </div>
-              <Button asChild effect="expandIcon" icon={ArrowRightIcon} iconPlacement="right">
-              <Link href="/projects">
-                View more projects
-              </Link>
+              <Button asChild effect="expandIcon" icon={ArrowRightIcon} iconPlacement="right" className="hidden md:block">
+                <Link href="/projects">
+                  View more projects
+                </Link>
+              </Button>
+              <Button asChild effect="expandIcon" icon={ArrowRightIcon} iconPlacement="right" className="block md:hidden ">
+                <Link href="/projects">
+                  More
+                </Link>
               </Button>
             </div>
           </div>

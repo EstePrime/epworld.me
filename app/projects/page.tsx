@@ -10,7 +10,7 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen relative overflow-hidden">
       <LightningBackground />
-      <div className="container px-4 py-16 mx-auto">
+      <div className="container px-4 py-16 mx-auto z-10 relative">
         <header className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display mb-6">
             <span className="italic">Projects</span>
