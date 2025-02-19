@@ -22,7 +22,7 @@ export default function Home() {
           </p>
         </header>
         <div className="flex justify-center gap-4 mb-16">
-          <Button asChild variant="outline" size="lg">
+          <Button asChild disabled variant="outline" size="lg">
             <Link href="https://x.com/EstePrimeWorld">
               <Mail className="mr-2 h-4 w-4" />
               Contact Me
@@ -63,12 +63,12 @@ export default function Home() {
                   Bringing concepts to life through cutting-edge web development.
                 </p>
               </div>
-              <Button asChild effect="expandIcon" icon={ArrowRightIcon} iconPlacement="right" className="hidden md:block">
+              <Button asChild effect="expandIcon" icon={ArrowRightIcon} iconPlacement="right" className="hidden md:flex">
                 <Link href="/projects">
                   View more projects
                 </Link>
               </Button>
-              <Button asChild effect="expandIcon" icon={ArrowRightIcon} iconPlacement="right" className="block md:hidden ">
+              <Button asChild effect="expandIcon" icon={ArrowRightIcon} iconPlacement="right" className="flex md:hidden ">
                 <Link href="/projects">
                   More
                 </Link>
