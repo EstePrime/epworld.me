@@ -4,6 +4,8 @@ import "./globals.css"
 import { cn } from "@/lib/utils"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import { PostHogProvider } from './providers'
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -27,12 +29,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <body className={cn("min-h-screen bg-cream font-sans antialiased", inter.variable, playfair.variable)}>
+      <PostHogProvider>
         <Navbar />
-
         <div className="w-full items-center justify-center h-full overflow-auto">
           {children}
           <Footer />
         </div>
+        </PostHogProvider>
       </body>
     </html>
   )
