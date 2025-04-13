@@ -20,7 +20,7 @@
     "escape-html": "^1.0.3",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.475.0",
-    "next": "15.2.3",
+    "next": "15.2.4",
     "next-mdx-remote": "^5.0.0",
     "posthog-js": "^1.219.4",
     "react": "^19.0.0",
